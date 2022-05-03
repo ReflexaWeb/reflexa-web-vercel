@@ -29,7 +29,7 @@ export function Header() {
             onChange={(e) => handleInputSearch(e.target.value)}
             placeholder="digite sua busca, são mais de 8 mil produtos"
           />
-          <button type="submit">Buscar</button>
+          <button type="submit">Buscar 123456</button>
         </Form>
 
         <Redes>
