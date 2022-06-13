@@ -7,7 +7,7 @@ import { Products } from "../../components/Products";
 import { Sobre } from '../../components/Sobre';
 
 
-import { AvisoLanding } from '../../components/AvisoLanding'
+//import { AvisoLanding } from '../../components/AvisoLanding'
 
 export function Home() {
   return (
