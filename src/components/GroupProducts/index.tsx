@@ -39,7 +39,6 @@ export function GroupProducts() {
     <Section>
       <Container>
         <Loading show={loadingProducts} />
-        
       </Container>
       <Container>
         <Produtos>
