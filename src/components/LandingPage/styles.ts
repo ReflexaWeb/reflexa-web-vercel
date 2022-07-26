@@ -11,10 +11,10 @@ export const Container = styled.div`
   flex-direction: column;
   padding:50px 0 50px 0;
 
-  .descDetailProduct{
-    h2{
+  .headline{
+    h1{
       color: #0063b4;
-      font-size: 40px;
+      font-size: 50px;
       font-weight: 600;
       line-height: 50px;
       margin-bottom: 45px;
@@ -25,22 +25,23 @@ export const Container = styled.div`
         line-height: 40px;
       }
     }
-
-    p{
-      display: block;
-      font-size: 22px;
-      line-height:32px;
-      margin-bottom: 100px;
-
-      strong{
-        font-weight: 600;
+    h2{
+      color: #4D4D4D;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 50px;
+      margin-bottom: 45px;
+      text-align: center;
+      @media(max-width: 600px) {
+        font-size: 30px;
+        line-height: 40px;
       }
     }
 
     a{
-      background:  #FFC801;
+      background: #32CD32;
       border-radius: 11px;
-      color: #0063b4;
+      color: #fff;
       display: block;
       font-size: 24px;
       font-weight: 600;
@@ -52,9 +53,46 @@ export const Container = styled.div`
       text-decoration: none;
       text-transform: uppercase;
     }
+  }
 
-    @media(max-width: 600px) {
-      padding: 20px;
+  @media(max-width: 600px) {
+      .headline{
+        a{
+          padding: 20px;
+          width:100% ;
+        }
+      }
+    }
+
+  .descDetailProduct{
+    h2{
+      color: #0063b4;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 50px;
+      margin-bottom: 45px;
+      margin-top:100px;
+      text-align: center;
+      @media(max-width: 600px) {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+    p{
+      display: block;
+      font-size: 22px;
+      line-height:32px;
+      margin-bottom: 100px;
+
+      strong{
+        font-weight: 600;
+      }
+
+      @media(max-width: 600px) {
+        text-align:center;
+        font-size:16px;
+        margin-bottom: 40px;
+      }
     }
   }
 

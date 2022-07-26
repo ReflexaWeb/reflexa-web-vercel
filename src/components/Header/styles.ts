@@ -79,15 +79,17 @@ export const Form = styled.form`
 `
 
 export const Barra = styled.div`
-  border-top: 1px solid #2160B0
+  border-top: 1px solid #2160B0;
 `
 
 export const Menu = styled.div`
 padding:53px 0;
+border-bottom: 1px solid #2160B0;
 
   display:flex;
   justify-content: center;
   align-items: center;
+  
 
   ul{
     display: flex;
