@@ -8,7 +8,7 @@ import { Pagination } from "../Pagination";
 
 import ApplicationContext from "../../context/application";
 
-import { Section, Container, Title, Produtos} from "./styles";
+import { Section, Container, Produtos} from "./styles";
 
 //import imgDefault from '../../assets/images/no-photo.jpeg';
 
@@ -17,7 +17,7 @@ interface codeParamsGroup {
 }
 
 export function GroupProducts() {
-  const { loadingProducts, groups, page, totalPages, handlePage } = useContext(ApplicationContext);
+  const { loadingProducts, page, totalPages, handlePage } = useContext(ApplicationContext);
 
   const { params } = useRouteMatch<codeParamsGroup | null>();
 
@@ -39,11 +39,6 @@ export function GroupProducts() {
     <Section>
       <Container>
         <Loading show={loadingProducts} />
-        <Title>
-        {groups.map(item => (
-          <h2> {item.name} </h2>
-        ))}
-        </Title>
       </Container>
       <Container>
         <Produtos>
