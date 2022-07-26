@@ -17,7 +17,7 @@ interface codeParamsGroup {
 }
 
 export function GroupProducts() {
-  const { loadingProducts, page, totalPages, handlePage } = useContext(ApplicationContext);
+  const { loadingProducts, groups, page, totalPages, handlePage } = useContext(ApplicationContext);
 
   const { params } = useRouteMatch<codeParamsGroup | null>();
 
@@ -40,7 +40,9 @@ export function GroupProducts() {
       <Container>
         <Loading show={loadingProducts} />
         <Title>
-          <h2>Página de Grupos</h2>
+        {groups.map(item => (
+          <h2> {item.name} </h2>
+        ))}
         </Title>
       </Container>
       <Container>
