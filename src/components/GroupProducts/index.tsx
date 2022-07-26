@@ -39,11 +39,7 @@ export function GroupProducts() {
     <Section>
       <Container>
         <Loading show={loadingProducts} />
-        <Title>
-        {groups.map(item => (
-          <h2> {item.name} </h2>
-        ))}
-        </Title>
+        
       </Container>
       <Container>
         <Produtos>
