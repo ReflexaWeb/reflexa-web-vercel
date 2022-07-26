@@ -1,69 +1,84 @@
-import React, { useEffect, useContext } from "react";
+import React, {useEffect, useContext, useState} from "react";
+import { useRouteMatch } from 'react-router-dom';
+
+import { api } from '../../services/api';
 
 import Loading from '../../components/FullLoader';
 import { Pagination } from "../Pagination";
 
 import ApplicationContext from "../../context/application";
 
-import { Section, Container, Title, Produtos } from "./styles";
+import { Section, Container, Title, Produtos} from "./styles";
 
 //import imgDefault from '../../assets/images/no-photo.jpeg';
 
-export function Products() {
-  const { products, groups, group, fetchProducts, handleGroup, loadingProducts, page, totalPages, handlePage } = useContext(ApplicationContext);
+interface codeParamsGroup {
+  group_code: string;
+}
+
+export function GroupProducts() {
+  const { loadingProducts, page, totalPages, handlePage } = useContext(ApplicationContext);
+
+  const { params } = useRouteMatch<codeParamsGroup | null>();
+
+  const [group, setGroup] = useState([])
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    async function Group() {
+      const response = await api.get(`products/products-by-group/${params?.group_code}`);
+      
+      setGroup(response.data)
+     //console.log("result.entries", response.data);
+      
+    }
+    if(params)Group();
+  }, [params])
 
   return (
+    <>
     <Section>
       <Container>
         <Loading show={loadingProducts} />
         <Title>
-          <h2>Catálogo de produtos</h2>
+          <h2>Página de Grupos</h2>
         </Title>
       </Container>
       <Container>
-        <select
-          onChange={(event) => handleGroup(event.target.value)}
-          value={group}
-        >
-          <option value="">Filtre por Grupos</option>
-          {groups.map(item => (
-            <option
-              key={item.id}
-              value={item.code}
-            >
-              {item.name}
-            </option>
-          ))}
-        </select>
-      </Container>
-      <Container>
         <Produtos>
-          {products.map(product => (
+        { group.map((product) => {
+            const {
+              name,
+              product_url,
+              group_code,
+              unity,
+              reference,
+              fraction_reference,
+              unity_reference
+
+            } = product;
+            return(
             <div className="card">
-              <img src={product.product_url} alt={product.name} />
+              <img src={product_url} alt={name} />
               <p>
-                {product.name}
+                {name}
               </p>
-              <span><strong>Código:</strong> {product.code}</span>
-              {product.unity &&<span><strong>{product.unity} </strong> {product.reference}
+              <span><strong>Código:</strong> {group_code}</span>
+              {unity &&<span><strong>{unity} </strong> {reference}
               </span>}
-              {product.fraction_reference &&<span><strong>{product.fraction_reference} </strong> {product.unity_reference}
+              {fraction_reference &&<span><strong>{fraction_reference} </strong> {unity_reference}
               </span>}
               <a href={
                 `https://api.whatsapp.com/send?phone=5541996739627&text=Bem-vindo(a)%20a%20Reflexa%20Embalagens!
                 Gostaria de orçar o produto:
-                Código:${product.code}
-                Nome: ${product.name}
+                Código:${group_code}
+                Nome: ${name}
                 `
               } rel="noreferrer" target="_blank"> Orçar Produto</a>
               <span className="obs">* As especificações podem ser alteradas sem aviso prévio</span>
               <span className="obs">** Imagem meramente ilustrativa</span>
             </div>
-          ))}
+            );
+          })}
         </Produtos>
       </Container>
       <Pagination
@@ -72,5 +87,6 @@ export function Products() {
         handlePagination={handlePage}
       />
     </Section>
+    </>
   )
 }

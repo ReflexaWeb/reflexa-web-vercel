@@ -21,7 +21,7 @@ export function Products() {
       <Container>
         <Loading show={loadingProducts} />
         <Title>
-          <h2>Catálogo de produtos</h2>
+          <h2>Confira nossos produtos</h2>
         </Title>
       </Container>
       <Container>

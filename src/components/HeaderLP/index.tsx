@@ -1,13 +1,12 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo-reflexa.png'
 import faceImg from '../../assets/images/facebook.png'
 import instaImg from '../../assets/images/instagram.png'
 
-import { Topo,Redes, Barra, Menu } from './styles'
+import { Topo,Redes, Barra } from './styles'
 
-export function Header() {
+export function HeaderLP() {
   
   return (
     <>
@@ -25,12 +24,6 @@ export function Header() {
       </Redes>
       </Topo>
       <Barra />
-      <Menu>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/sobre">Sobre</Link></li>
-        </ul>
-      </Menu>
     </>
   )
 }

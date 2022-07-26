@@ -33,24 +33,21 @@ export const Container = styled.div`
 `
 
 export const Title = styled.div`
+  background:#FEB712 ;
+  padding:20px 0;
   width: 100%;
   display: block;
 
   h2{
-  color:#0063b4;
+  color:#fff;
   font-family: OpenSans;
-  font-size: 44px;
+  font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
 
-    &::after{
-      content: '';
-      display: block;
-      height: 3px;
-      width: 237px;
-      background-color: #ffb800;
-    }
     @media(max-width: 600px) {
       text-align:center;
     }
