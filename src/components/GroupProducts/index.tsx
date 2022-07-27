@@ -45,6 +45,7 @@ export function GroupProducts() {
         { group.map((product) => {
             const {
               name,
+              code,
               product_url,
               group_code,
               unity,
@@ -59,7 +60,7 @@ export function GroupProducts() {
               <p>
                 {name}
               </p>
-              <span><strong>Código:</strong> {group_code}</span>
+              <span><strong>Código:</strong> {code}</span>
               {unity &&<span><strong>{unity} </strong> {reference}
               </span>}
               {fraction_reference &&<span><strong>{fraction_reference} </strong> {unity_reference}
