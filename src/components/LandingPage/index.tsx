@@ -16,7 +16,7 @@ export function LandingPage() {
             <div className="headline">
               <h1>No Tamanho Ideal para Sua necessidade!</h1>
               <h2>Aproveite a oportunidade!</h2>
-              <a href="https://api.whatsapp.com/send?phone=5541996739627&text=Reflexa%20Embalagens%20-%20Or%C3%A7ar%20Saco%20Lixo100L" rel="noreferrer" target="_blank"> Faça seu orçamento</a>
+              <a href="https://api.whatsapp.com/send?phone=5541999099627&text=Reflexa%20Embalagens%20-%20Or%C3%A7ar%20Saco%20Lixo100L" rel="noreferrer" target="_blank"> Faça seu orçamento</a>
             </div>
 
             <div className="descDetailProduct">

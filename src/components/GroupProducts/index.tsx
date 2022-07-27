@@ -66,7 +66,7 @@ export function GroupProducts() {
               {fraction_reference &&<span><strong>{fraction_reference} </strong> {unity_reference}
               </span>}
               <a href={
-                `https://api.whatsapp.com/send?phone=5541996739627&text=Bem-vindo(a)%20a%20Reflexa%20Embalagens!
+                `https://api.whatsapp.com/send?phone=5541999099627&text=Bem-vindo(a)%20a%20Reflexa%20Embalagens!
                 Gostaria de orçar o produto:
                 Código:${group_code}
                 Nome: ${name}

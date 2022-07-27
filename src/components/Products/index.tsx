@@ -54,7 +54,7 @@ export function Products() {
               {product.fraction_reference &&<span><strong>{product.fraction_reference} </strong> {product.unity_reference}
               </span>}
               <a href={
-                `https://api.whatsapp.com/send?phone=5541996739627&text=Bem-vindo(a)%20a%20Reflexa%20Embalagens!
+                `https://api.whatsapp.com/send?phone=554199909-9627&text=Bem-vindo(a)%20a%20Reflexa%20Embalagens!
                 Gostaria de orçar o produto:
                 Código:${product.code}
                 Nome: ${product.name}
