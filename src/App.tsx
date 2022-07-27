@@ -10,10 +10,11 @@ import { ApplicationProvider } from "./context/application";
 
 
 const tagManagerArgs = {
-    gtmId: 'AW-527629567'
+    gtmId: 'GTM-K7W6KXX'
 }
 
 TagManager.initialize(tagManagerArgs);
+
 ReactGA.initialize('UA-114594548-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
