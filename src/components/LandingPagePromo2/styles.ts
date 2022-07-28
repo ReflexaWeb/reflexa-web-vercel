@@ -9,7 +9,7 @@ export const Container = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   flex-direction: column;
-  padding:50px 0 50px 0;
+  padding:0 0 50px 0;
 
   .headline{
     h1{
@@ -18,7 +18,7 @@ export const Container = styled.div`
       font-weight: 600;
       line-height: 50px;
       margin-bottom: 45px;
-      margin-top:100px;
+      margin-top:40px;
       text-align: center;
       @media(max-width: 600px) {
         font-size: 30px;
@@ -30,7 +30,7 @@ export const Container = styled.div`
       font-size: 40px;
       font-weight: 600;
       line-height: 50px;
-      margin-bottom: 45px;
+      margin-bottom: 30px;
       text-align: center;
       @media(max-width: 600px) {
         font-size: 30px;
