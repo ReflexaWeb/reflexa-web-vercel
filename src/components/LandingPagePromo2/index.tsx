@@ -26,8 +26,8 @@ export function LandingPagePromo2() {
               </p>
             </div>
             <span>
-              *Promoção Válida 26/07/2022 a 31/07/2022 ou enquanto durarem estoque. <br/>
-              *Atende CURITIBA *** REGIAO METROPOLITANTE MEDIANTE CONSULTA
+              *Promoção Válida 29/07/2022 a 05/08/2022 ou enquanto durar o estoque. <br/>
+              *Atende CURITIBA *** REGIAO METROPOLITANA MEDIANTE CONSULTA
             </span>
           </Container>
         </Section>
