@@ -9,6 +9,7 @@ export function Footer() {
          Sábado Não abrimos </p>
       <p>Whatsapp: (41) 99909 - 9627 | E-mail: vendas01@reflexa.com.br</p>
       <p>Reflexa Embalagens | Comércio de Embalagens em Curitiba | Todos os direitos reservados</p>
+      <p>Atendemos CURITIBA  |  REGIAO METROPOLITANA MEDIANTE CONSULTA</p>
     </Rodape>
   )
 }
