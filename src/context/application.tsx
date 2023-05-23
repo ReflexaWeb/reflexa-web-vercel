@@ -22,6 +22,7 @@ interface IGroup {
     code: string;
     value: string;
     label: string;
+    active: boolean;
 }
 
 interface IAction {
@@ -38,6 +39,7 @@ interface IApplicationState {
     products: IProduct[];
     groups: IGroup[];
     loadingProducts: boolean;
+    active: boolean;
 }
 
 interface IApplicationContext extends IApplicationState {
@@ -56,6 +58,7 @@ const ApplicationContext = React.createContext<IApplicationContext>({
     products: [],
     groups: [],
     loadingProducts: false,
+    active: false,
     handleSearch: () => {
     },
     handleGroup: () => {
@@ -112,6 +115,7 @@ const ApplicationProvider: React.FC = ({ children }: any) => {
         products: [],
         groups: [],
         loadingProducts: false,
+        active: false,
     });
 
     const handleSearch = (search: string) => {
@@ -137,7 +141,14 @@ const ApplicationProvider: React.FC = ({ children }: any) => {
 
     React.useEffect(() => {
         const fetchgroups = async () => {
-            const response = await api.get('groups');
+            const response = await api.get('groups',{
+                params: {
+                    active: true,
+                },
+            });
+
+
+
             dispatch({
                 type: 'SET_GROUPS',
                 payload: response.data,
@@ -155,7 +166,7 @@ const ApplicationProvider: React.FC = ({ children }: any) => {
 
         const response = await api.get(`products`, {
             params: {
-                //active: true,
+                active: true,
                 name: state.search,
                 page: state.page,
                 per_page: state.perPage,
